@@ -13,7 +13,6 @@ pipeline {
         stage('Unit test') {
             steps {
                 echo "Unit Testing is done here"
-                ls -ltr
                 sh 'sonar-scanner'
             }
         }
