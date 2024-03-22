@@ -27,7 +27,7 @@ pipeline {
         nexusArtifactUploader(
           nexusVersion: 'nexus3',
           protocol: 'http',
-          nexusUrl: 'http://18.235.2.143:8081/',
+          nexusUrl: '18.235.2.143:8081/',
           groupId: 'com.roboshop',
           version: '1.0.0',
           repository: 'Catalogue1',
@@ -36,7 +36,7 @@ pipeline {
             [artifactId: 'Catalogue1',
              classifier: '',
              file: 'Catalogue1.zip',
-             type: '.zip']
+             type: 'zip']
           ]
         )
       }
