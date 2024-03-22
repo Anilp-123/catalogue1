@@ -29,10 +29,10 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //         echo 'One way or another, I have finished'
-    //         deleteDir() 
-    //     }
-    // }
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() 
+        }
+    }
 }
