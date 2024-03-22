@@ -20,7 +20,7 @@ pipeline {
         stage('npm build') {
             steps {
                 sh 'ls -ltr'
-                sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".git/*" Catalogue1.zip'
+                sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".git/*" "Catalogue1.zip"'
             }
         }
         stage('Deploying') {
@@ -28,11 +28,11 @@ pipeline {
                 echo "Deploying..."
             }
         }
-        post {
-            always {
-                echo 'One way or another, I have finished'
-                deleteDir() 
-            }
+    }
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() 
         }
     }
 }
