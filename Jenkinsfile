@@ -10,11 +10,17 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Unit test') {
-            steps {
-                echo "Unit Testing is done here"
+        // stage('Unit test') {
+        //     steps {
+        //         echo "Unit Testing is done here"
+        //         sh 'ls -ltr'
+        //         sh 'sonar-scanner'
+        //     }
+        // }
+        stage {
+            steps{
                 sh 'ls -ltr'
-                sh 'sonar-scanner'
+                sh 'npm build'
             }
         }
         stage('Deploying') {
