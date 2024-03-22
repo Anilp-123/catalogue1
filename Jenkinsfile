@@ -17,7 +17,7 @@ pipeline {
         //         sh 'sonar-scanner'
         //     }
         // }
-        stage {
+        stage('npm build') {
             steps{
                 sh 'ls -ltr'
                 sh 'npm build'
