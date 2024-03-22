@@ -25,9 +25,9 @@ pipeline {
         }
 
         post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() 
+            always {
+                echo 'One way or another, I have finished'
+                deleteDir() 
         }
         }
         stage('Deploying') {
