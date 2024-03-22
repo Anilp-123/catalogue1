@@ -20,7 +20,7 @@ pipeline {
         stage('npm build') {
             steps {
                 sh 'ls -ltr'
-                sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".git/*"'
+                sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".zip*" ".git/*"'
             }
         }
         stage('Deploying') {
