@@ -23,6 +23,13 @@ pipeline {
                 sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".zip*" ".git/*"'
             }
         }
+
+        post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() 
+        }
+        }
         stage('Deploying') {
             steps {
                 echo "Deploying..."
