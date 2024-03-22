@@ -18,9 +18,9 @@ pipeline {
         //     }
         // }
         stage('npm build') {
-            steps{
+            steps {
                 sh 'ls -ltr'
-                sh 'npm build'
+                sh 'sh 'zip -r Catalogu1.zip ./* -x "Jenkinsfile" "sonar-project.properties" ".git"'
             }
         }
         stage('Deploying') {
