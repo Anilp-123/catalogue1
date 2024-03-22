@@ -23,23 +23,23 @@ pipeline {
                 sh 'zip -r Catalogue1.zip ./* -x "sonar-project.properties" ".git/*" "Catalogue1.zip"'
             }
         }
-        stage('articat upload nexus'){
+        stage('artifact upload nexus') {
             steps {
                 nexusArtifactUploader(
-                nexusVersion: 'nexus3',
-                protocol: 'http',
-                nexusUrl: 'http://18.235.2.143:8081/',
-                groupId: 'com.roboshop',
-                version: '1.0.0',
-                repository: 'Catalogue1',
-                credentialsId: 'nexus-auth',
-                artifacts: [
-                    [artifactId: 'Catalogue1',
-                    classifier: '',
-                    file: 'Catalogue1.zip',
-                    type: '.zip']
-                ]
-     )
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    nexusUrl: 'http://18.235.2.143:8081/',
+                    groupId: 'com.roboshop',
+                    version: '1.0.0',
+                    repository: 'Catalogue1',
+                    credentialsId: 'nexus-auth',
+                    artifacts: [
+                        [artifactId: 'Catalogue1',
+                        classifier: '',
+                        file: 'Catalogue1.zip',
+                        type: 'zip']
+                    ]
+                )
             }
         }
         stage('Deploying') {
